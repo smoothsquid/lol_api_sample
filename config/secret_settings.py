@@ -1,0 +1,1 @@
+LOL_API_KEY = "RGAPI-dd937a50-f0cf-4c92-b7df-70aa6e533ed7"
