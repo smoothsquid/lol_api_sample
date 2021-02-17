@@ -21,6 +21,7 @@ class Champion(models.Model):
     )
     name_kr = models.CharField(_("이름"), max_length=15)
     name_en = models.CharField(_("Name"), max_length=50)
+    title = models.TextField(_("타이틀"), blank=True)
     blurb = models.TextField(_("이야기"), blank=True)
     image_full = models.CharField(_("아이콘 이미지"), max_length=50)
     image_group = models.CharField(_("이미지 그룹"), max_length=50)
@@ -29,3 +30,11 @@ class Champion(models.Model):
     image_sprite_y = models.SmallIntegerField(_("스프라이트 y"))
     image_sprite_w = models.SmallIntegerField(_("스프라이트 w"))
     image_sprite_h = models.SmallIntegerField(_("스프라이트 h"))
+
+    def __str__(self):
+        return "{} {}".format(self.pk, self.name_kr)
+
+    class Meta:
+        db_table = "lol_champion"
+        verbose_name = "챔피언"
+        verbose_name_plural = "챔피언"
