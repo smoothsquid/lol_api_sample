@@ -1,3 +1,7 @@
+.summoner-card {
+    display: inline-block;
+    width: 120px;
+}
 .summoner-icon {
     width: 50px;
 }

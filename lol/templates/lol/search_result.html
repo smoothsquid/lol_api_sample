@@ -11,7 +11,7 @@
 <body>
     <div>
     {% for id in id_list %}
-        <div>
+        <div class="summoner-card">
             <p>{{ id.player.summonerName }}</p>
             <img class="summoner-icon" src="http://ddragon.leagueoflegends.com/cdn/11.3.1/img/profileicon/{{ id.player.profileIcon }}.png" alt="프로필 아이콘">
         </div>
