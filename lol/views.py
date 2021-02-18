@@ -10,6 +10,6 @@ class SearchMatchView(views.View):
     def get(self, request):
         query = request.GET.get("query", "")
         context = {
-            "id_list": search_match(query),
+            "match_list": search_match(query),
         }
         return render(request, self.template_name, context)

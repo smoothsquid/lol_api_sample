@@ -12,8 +12,15 @@ def search_match(summoner_name):
     result = api.get_matches_by_account(account_id)
     matches = result["matches"]
 
-    if matches and len(matches) > 0:
-        game_id = matches[0]["gameId"]
-        match = api.get_match(game_id)
-        participant_id_list = match["participantIdentities"]
-        return participant_id_list
+    match_list = []
+    for match in matches:
+        game_id = match["gameId"]
+        match_data = api.get_match(game_id)
+        participant_id_list = match_data["participantIdentities"]
+        match_list.append(
+            {
+                "game_id": game_id,
+                "participant_id_list": participant_id_list,
+            }
+        )
+    return match_list
